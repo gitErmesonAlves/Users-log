@@ -1,24 +1,17 @@
-usersName = list()
-usersYear = list()
-
+users = []
 while True:
     print('=' * 30)
-
-    n = str(input('Digite um Nome: '))
-    if n not in usersName:
-        usersName.append(n)
-        print('Nome Cadastrado')
-    i = int(input('Digite sua Idade: '))
-    if i not in usersYear:
-        usersYear.append(i)
-        print('Idade Adicionada')
+    client = {'nome': str(input('Nome do Cliente: ')), 'idade': int(input('Idade do Cliente: '))}
+    if client not in users:
+        users.append(client)
+        print('Cadastrado')
     else:
-        print('Nome Duplicado')
+        print('Cliente ja Cadastrado')
 
     r = str(input('Quer Continuar S/N'))
     if r in 'Nn':
         break
 
 print('='*30)
-print('Nomes Cadastrados: {}'.format(usersName))
-print('Idades Cadastradas: {}'.format(usersYear))
+for u in users:
+    print('Clientes Cadastrados:  {} - {} '.format(u['nome'], u['idade']))
